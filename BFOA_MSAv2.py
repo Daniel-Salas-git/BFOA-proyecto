@@ -66,35 +66,3 @@ for _ in range(iteraciones):  # número de iteraciones
 
 bestBacteria.showGenome()
 validaSecuencias(path, bestBacteria)
-#-----------------------------------------------
-def experimentar(self, path, dAttr, wAttr, hRep, wRep, num_iteraciones=30):
-    fitness_results = []
-    nfe_results = []
-
-    for _ in range(num_iteraciones):
-        self.run(path, dAttr, wAttr, hRep, wRep)
-        fitness_results.append(self.veryBest.fitness)
-        nfe_results.append(self.globalNFE)
-
-    # Llama al método para graficar los resultados
-    self.graficar_resultados(fitness_results, nfe_results)
-    
-def graficar_resultados(self, fitness_results, nfe_results):
-    plt.figure(figsize=(10, 5))
-
-    # Gráfica de Fitness
-    plt.subplot(1, 2, 1)
-    plt.plot(fitness_results, marker='o', color='b')
-    plt.title("Evolución del Fitness")
-    plt.xlabel("Iteración")
-    plt.ylabel("Fitness")
-
-    # Gráfica de NFE
-    plt.subplot(1, 2, 2)
-    plt.plot(nfe_results, marker='o', color='r')
-    plt.title("Evolución del NFE")
-    plt.xlabel("Iteración")
-    plt.ylabel("NFE")
-
-    plt.tight_layout()
-    plt.show()
